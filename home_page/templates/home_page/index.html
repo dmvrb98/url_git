@@ -1,0 +1,19 @@
+{% extends "./base.html" %}
+
+{% block page_header %}
+	<form method="POST">
+		<div class="row">
+   		{% csrf_token %}
+   		{{ form }}
+		<button type="submit" class="btn btn-primary">Create short URL</button>
+		</div>
+	</form>
+{% endblock page_header %}
+
+{% block content %}
+{{ urls }}
+{{ shorts }}
+	{% for url in urls %}
+		{{ url }}
+	{% endfor %}
+{% endblock content %}
