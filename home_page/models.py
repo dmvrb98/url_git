@@ -3,11 +3,13 @@ from django.contrib.auth.models import User
 
 
 class UsersUrl(models.Model):
-	url = models.CharField(max_length=100)
-	short = models.CharField(max_length=10)
-	date_added = models.DateTimeField(auto_now_add=True)
+	url = models.CharField(max_length=200)
+	short = models.CharField(max_length=10, blank=True)
+	date_added = models.DateTimeField(null=True)
+	click_count = models.IntegerField(default=0)
+	url_content = models.CharField(max_length=500, blank=True)
 
 	def __str__(self):
-		return self.url
+		return f"{self.url[:50]}..."
 
 

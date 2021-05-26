@@ -5,7 +5,7 @@ from .models import UsersUrl
 class UrlForm(forms.ModelForm):
 	class Meta:
 		model = UsersUrl
-		fields = ('url', 'short',)
+		fields = ['url', 'short',]
 		labels = {'url': '',
 				  'short': '',}
 		widgets = {
@@ -17,3 +17,13 @@ class UrlForm(forms.ModelForm):
 				  	'class': 'col',
 				  	'placeholder': 'Your short URL(optional)',}),
 					}
+
+
+class ManageForm(forms.ModelForm):
+	class Meta:
+		model = UsersUrl
+		fields = ['short', 'url_content', 'click_count', 'date_added']
+		labels = {'short': '', 'url_content': '', 'click_count': '', 'date_added': ''}
+		widgets = {
+    
+        }

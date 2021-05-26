@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'users',
     'home_page',
     'bootstrap4',
+    'django_bootstrap_icons',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

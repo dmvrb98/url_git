@@ -1,4 +1,5 @@
 {% extends "./base.html" %}
+{% load bootstrap_icons %}
 
 {% block page_header %}
 	<form method="POST">
@@ -11,9 +12,28 @@
 {% endblock page_header %}
 
 {% block content %}
-{{ urls }}
-{{ shorts }}
-	{% for url in urls %}
-		{{ url }}
-	{% endfor %}
+<table class="table">
+  <thead>
+	 <tr>
+      <th scope="col">URL</th>
+      <th scope="col">Text</th>
+      <th scope="col">Clicks</th>
+      <th scope="col">Short URL</th>
+      <th scope="col">Created</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+  	{% for url in urls %}
+    <tr>
+      <td><a href="{% url 'home_page:manage_url' url.id%}">{{ url }}</td>
+      <td>{{ url.url_content }}</td>
+      <td>{{ url.click_count }}</td>
+      <td><a href="{% url 'home_page:redirect_url' url.short %}">{{ url.short }}</td>
+      <td>{{ url.date_added|date:'d M Y H:i'}}</td>
+      <td><a href="{% url 'home_page:delete_url' url.id %}"><i class="fas fa-trash-alt"></a></i></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
 {% endblock content %}

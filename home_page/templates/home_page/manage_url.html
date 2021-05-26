@@ -1,0 +1,27 @@
+{% extends "./base.html" %}
+{% load bootstrap4 %}
+
+{% block page_header %}
+	<h4>{{ urls|urlize }}</h4>
+{% endblock page_header %}
+{% block content %}
+<label class="sr-only" for="short">Short Url</label>
+  <div class="input-group mb-2 mr-sm-2">
+    <div class="input-group-prepend">
+      <div class="input-group-text">http://localhost:8000/</div>
+    </div>
+    <input type="text" name="short" class="form-control" id="short"value="{{ urls.short }}">
+  </div>
+
+  <form>
+  <div class="row">
+    <div class="col">
+      <input type="text" class="form-control" value="{{ urls.date_added }}">
+    </div>
+    <div class="col">
+      <input type="text" class="form-control" value="{{ urls.click_count }}">
+    </div>
+  </div>
+</form>
+
+ {% endblock content %}
