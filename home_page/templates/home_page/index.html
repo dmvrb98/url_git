@@ -3,11 +3,18 @@
 
 {% block page_header %}
 	<form method="POST">
-		<div class="row">
+		<div class="form">
    		{% csrf_token %}
-   		{{ form }}
+      {{ form.url }}
+      {{ form.short }}
 		<button type="submit" class="btn btn-primary">Create short URL</button>
 		</div>
+    <div>
+    {% if form.errors %}
+      <div class="alert alert-danger" role="alert">
+        This short URL is already exists.
+      </div>
+    {% endif %}
 	</form>
 {% endblock page_header %}
 

@@ -10,12 +10,14 @@ class UrlForm(forms.ModelForm):
 				  'short': '',}
 		widgets = {
 			'url': forms.TextInput(attrs={
-			'class': 'col-6', 
+			'size': '50', 
 			'placeholder': 'Your URL', }),
+			
 
 				  'short': forms.TextInput(attrs={
-				  	'class': 'col',
-				  	'placeholder': 'Your short URL(optional)',}),
+				  	'size': '35',
+				  	'placeholder': 'Your short URL(optional)',},
+				  	),
 					}
 
 
