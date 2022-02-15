@@ -6,16 +6,16 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('home_page', '0002_alter_usersurl_options'),
+        ("home_page", "0002_alter_usersurl_options"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='createdurl',
-            options={'verbose_name_plural': 'Created Urls'},
+            name="createdurl",
+            options={"verbose_name_plural": "Created Urls"},
         ),
         migrations.AlterModelOptions(
-            name='usersurl',
-            options={'verbose_name_plural': 'Users Urls'},
+            name="usersurl",
+            options={"verbose_name_plural": "Users Urls"},
         ),
     ]

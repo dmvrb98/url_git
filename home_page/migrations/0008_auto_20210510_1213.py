@@ -6,22 +6,22 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('home_page', '0007_auto_20210510_1148'),
+        ("home_page", "0007_auto_20210510_1148"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='usersurl',
+            name="usersurl",
             options={},
         ),
         migrations.RenameField(
-            model_name='usersurl',
-            old_name='text',
-            new_name='short',
+            model_name="usersurl",
+            old_name="text",
+            new_name="short",
         ),
         migrations.AddField(
-            model_name='usersurl',
-            name='url',
+            model_name="usersurl",
+            name="url",
             field=models.CharField(default=1, max_length=100),
             preserve_default=False,
         ),

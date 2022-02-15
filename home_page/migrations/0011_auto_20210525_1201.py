@@ -6,18 +6,18 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('home_page', '0010_auto_20210520_0754'),
+        ("home_page", "0010_auto_20210520_0754"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='usersurl',
-            name='date_added',
+            model_name="usersurl",
+            name="date_added",
             field=models.DateTimeField(),
         ),
         migrations.AlterField(
-            model_name='usersurl',
-            name='url_content',
+            model_name="usersurl",
+            name="url_content",
             field=models.TextField(blank=True, max_length=500),
         ),
     ]

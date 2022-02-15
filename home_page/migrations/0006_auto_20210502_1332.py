@@ -7,24 +7,26 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('home_page', '0005_remove_usersurl_owner'),
+        ("home_page", "0005_remove_usersurl_owner"),
     ]
 
     operations = [
         migrations.RenameField(
-            model_name='usersurl',
-            old_name='url',
-            new_name='text',
+            model_name="usersurl",
+            old_name="url",
+            new_name="text",
         ),
         migrations.AddField(
-            model_name='createdurl',
-            name='text',
+            model_name="createdurl",
+            name="text",
             field=models.TextField(default=1),
             preserve_default=False,
         ),
         migrations.AlterField(
-            model_name='createdurl',
-            name='url',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='home_page.usersurl'),
+            model_name="createdurl",
+            name="url",
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.CASCADE, to="home_page.usersurl"
+            ),
         ),
     ]
